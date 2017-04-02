@@ -56,7 +56,7 @@ google.maps.event.addListener(map, 'dragend', function () {
    }
 
    function openweather(lat,lng) {
-     var OpenWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&appid=2d06ab6c40757b1d2349d6d35807c47f&&units=metric";
+     var OpenWeatherUrl = "//api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lng+"&appid=2d06ab6c40757b1d2349d6d35807c47f&&units=metric";
      console.log(OpenWeatherUrl);
      $.ajax({
                url: OpenWeatherUrl,
