@@ -63,7 +63,8 @@ google.maps.event.addListener(map, 'dragend', function () {
                method: 'GET'
              }).then(function(response) {
       console.log(response.weather[0].main);
-      var isoDate = new Date(response.sys.sunrise).toISOString();
+      var rise = new Date(response.sys.sunrise).toISOString();
+      var set = new Date(response.sys.sunset).toISOString();
      $('#cname').html('<h4>'+response.name+'</h4>');
      $('#imgtemp').attr('src',"image/"+response.weather[0].icon+".png");
      $('#temp').html(response.main.temp+'°C');
@@ -71,8 +72,8 @@ google.maps.event.addListener(map, 'dragend', function () {
      $('#tmax').html('<h4>'+response.main.temp_max+'°C</h4>');
      $('#weather').html('<h4>'+response.weather[0].main+' '+'('+response.weather[0].description+')</h4>');
   //   $('#des').html('<h4>'+response.weather[0].description+'</h4>');
-     $('#sunrise').html('<h4>'+isoDate+'</h4>');
-     $('#sunset').html('<h4>'+response.sys.sunset+'</h4>');
+     $('#sunrise').html('<h4>'+rise+'</h4>');
+     $('#sunset').html('<h4>'+set+'</h4>');
 
              });
    }
